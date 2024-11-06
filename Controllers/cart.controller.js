@@ -34,14 +34,14 @@ const addToCart = async (req, res, next) => {
     }
 
     // Fetch the updated book details to include in the response
-    const updatedBook = await Library.findById(bookId);
+    // const updatedBook = await Library.findById(bookId);
 
     await cart.save();
 
     res.status(200).json({
       success: true,
       message: "Book added to cart successfully",
-      data: { cart, book: updatedBook },
+      data: { cart},
     });
   } catch (error) {
     return next(new AppError("Internal Server Error", 500));
