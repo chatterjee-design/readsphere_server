@@ -70,8 +70,8 @@ const getCart = async (req, res, next) => {
 //remove book from cart
 const removeFromCart = async (req, res, next) => {
   try {
-      const { bookId } = req.body; 
-      const userId = req.user.id;
+    const bookId = req.headers['book-id']; 
+    const userId = req.user.id;
   
       // Validate input
       if (!bookId) {

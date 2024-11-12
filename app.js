@@ -10,6 +10,7 @@ import cartRoute from "./Routes/cart.routes.js";
 import orderRoute from "./Routes/order.router.js";
 import statsRoute from "./Routes/stats.routes.js";
 import contactUsRouter from "./Routes/contact.router.js";
+import likeRoute from "./Routes/like.routes.js";
 
 //config doten file
 config()
@@ -44,6 +45,7 @@ app.use(cors({
 app.use('/api/user', userRouter);
 app.use('/api/library', libraryRoute)
 app.use('/api/cart', cartRoute)
+app.use('/api/favourite', likeRoute)
 app.use('/api/order', orderRoute)
 app.use('/api/stats', statsRoute)
 app.use('/api/contact', contactUsRouter)
